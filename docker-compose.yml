@@ -13,6 +13,12 @@ services:
       database__connection__database: $DB_NAME
     volumes:
       - ghost:/etc/w2l/ghost/content
+    networks:
+      - w2l_network
 
 volumes:
   ghost:
+
+networks:
+  w2l_network:
+    driver: bridge
